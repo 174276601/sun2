@@ -1,7 +1,7 @@
 {
 	"id": "sqxs.app.sub",
 	"name": "书旗&极速",
-	"author": "@zw119",
+	"author": "@174276601",
 	"apps": [{
 		"id": "sqxs&speed",
 		"name": "书旗小说&极速",
@@ -228,7 +228,7 @@
 
 
 		],
-		"author": "@zw119",
+		"author": "@174276601",
 		"settings": [{
 			"id": "sqxs",
 			"name": "当前账号",
