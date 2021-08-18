@@ -16,8 +16,8 @@ const $ = Env(jobname)
 
 async function all() {
     //nodejs运行
-    await dailysign();
-    await $.wait(1000);
+    //await dailysign();
+    //await $.wait(1000);
     //await vedioreward();
     //await $.wait(1000);
     //await vediorewarddraw();
@@ -30,7 +30,7 @@ async function all() {
     //await $.wait(1000);
     //await receive();
     //await $.wait(1000);
-    //await jsdailysign();
+    await jsdailysign();
     await $.wait(1000);
     await jsvedioreward20();
     await $.wait(1000);
