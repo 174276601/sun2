@@ -30,7 +30,7 @@ async function all() {
     //await $.wait(1000);
     //await receive();
     //await $.wait(1000);
-    await jsdailysign();
+    //await jsdailysign();
     await $.wait(1000);
     await jsvedioreward20();
     await $.wait(1000);
