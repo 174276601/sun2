@@ -40,8 +40,8 @@ async function all() {
     await $.wait(1000);
     await jsshare();
     await $.wait(1000);
-    //await jsread()
-    //await $.wait(1000);
+    await jsread()
+    await $.wait(1000);
     for(let i=0;i<10;i++)
     {
         await vedioreward426();
@@ -203,17 +203,16 @@ function jsread() {
     return new Promise((resolve, reject) => {
          const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery?sdk=14.6&ustatus=1&umidtoken=wGRLAd1LOjxByTV7SSyOvpA4qSfDtolT&net_env=wifi&placeid=111111&user_id=2916901745&sn=E92DD36C442DA62AA22EF6B3333F044F331EA5AC&msv=10.0.0&brand=Apple&imei=F4272D0D67994A9AD162B30B05698204BD8445A3&appVer=1.0.5.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GNDI3MkQwRDY3OTk0QTlBRDE2MkIzMEIwNTY5ODIwNEJEODQ0NUEzIiwic24iOiJmYXN0X0U5MkREMzZDNDQyREE2MkFBMjJFRjZCMzMzM0YwNDRGMzMxRUE1QUMiLCJleHAiOjE2MjkwMDEzODcsInVzZXJJZCI6IjI5MTY5MDE3NDUiLCJpYXQiOjE2Mjg0ODI5ODcsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.Tm6DmTEVrc_PNRMR-fMouAqqdm9DBIJi_hYurOOaDHZJg2Qxm81N9PxKWggtzrwgkSPgoOJhBxehhLKFFvCMBg&statusBarHeight=44.000000&platform=116&ver=210331&mod=iPhoneXS&wh=1125x2436&utype=vip&utdid=YAzuwNlmZUMDAP8Knq70D7M9&idfa=00000000-0000-0000-0000-000000000000";
          const headers = {
-    "Cookie": "isg=BLy8y1cg8VYBisUd1W4whMJzh15utWDf1ibuiJY9WafvYRzrvsWNbVLBRw8ZMpg3; cna=BXqeGVTd73sCAatTLPUxYOJB",
-    "Accept": "*/*",
-    "Connection": "keep-alive",
-    "Content-Type": "application/x-www-form-urlencoded",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Host": "ocean.shuqireader.com",
-    "User-Agent": "shuqifast/1.0.5 (iPhone; iOS 14.6; Scale/3.00)",
-    "Content-Length": "603",
-    "Accept-Language": "zh-Hans-US;q=1, zh-Hant-HK;q=0.9, hi-US;q=0.8, en-US;q=0.7"
+   'Cookie' : `isg=BGNjpqDSBgoVFcpANMOMOU2_-KMNWPeajxACnJXAiUIm1Nr2HSny6nlOyiJa70-S; cna=Mp/FGZTpP3UCATIHn3xjUi0q`,
+   'Accept' : `*/*`,
+   'Connection' : `keep-alive`,
+   'Content-Type' : `application/x-www-form-urlencoded`,
+   'Accept-Encoding' : `gzip, deflate, br`,
+   'Host' : `ocean.shuqireader.com`,
+   'User-Agent' : `shuqifast/1.0.4 (iPhone; iOS 14.3; Scale/3.00)`,
+   'Accept-Language' : `zh-Hans-CN;q=1`
 };
-         const body = "actId=355&miniWua=HHnB_c/ctO11SSNODDkG3RkNbzMkUI8EWCg/PA5SjzH7YwOUBhR9NOI3WOKepUeKY0UGAtKwawndI2MzObr1L3XdWOjNF4k155i8%2BWcrsTNbqHkk2sy3bYyrPU7hMMDK/zgMd&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&timestamp=1629066304&userId=2916901745&wua=ktgi_aLfYfZH9LUibJBQjBTegTnJOd903oB6hZUaJ4lDIQTGmCCNaidE7Q0abSs8D8/SI%2BT/LHAdRQ8Nn6hCo6VExvP4aQk1kDqIzMdFbDOE22TOz6zs9w2cjgkzQ/wKQYdBscVMMkuP7zWnx5ZpyqzZAlr5gTRHxaKKKU5IRNMPzatgeT/erhUaZkwt%2BwOBr9ng4MQJ2SWybvKd3M9Dw0riw3coH0UR6BVLPMf0UgW1cxM9kYzRb7ddDyleCp%2BRoXmczfn1DvsRSJaRFwnAAu8NcgK9iXFaEFsw6f3LUG7nZGVGr67Pe0uDsLt1c%2BiaER7JV";
+         const body = "actId=355&miniWua=HHnB_59pfVLjoUerS%2Bn61x86wMkXFFt3dyEadw1BBFBdSG0QzoWqvUf9XaHmTSalEjb5TO6VbSa2Ly%2BSc3Ajr0tveZPhooYp0jqUB5zivCRiVdp8ynz0rYtXMihkwYvU4WjId&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&timestamp=1631597629&userId=2111665808&wua=ktgi_WGIxj9RZH8hS5111lfNrVXxvzN2DsCnkFwXynhixDIRuEN9M1ngzR7b0i4MrS1bhCnHnR%2B4N/1jfyxkyN38j/T9bfV4xXxBZ9zJ6KBkM2j%2BmgrDCkA5vVmWZnWgnHd0QC9ILOSaxU5Lth7KyLUWNo/xLiLo1lel3GWNPkvne5gj6Ki9%2BX93NFA8O1GNVZXhbV6HBHOGUxhejHtpbieQHyIwQpDCekkfUeht5LJZSMLNd%2B8ummH6jANrjD3DcL9z4GGMbrEGFqJQFOWGeA7NBeJfTSO%2B0ARuLLocn9K24xVMIte/Nz9wjn%2Bf7MCwPRL/QQJrnAWJ7PGlwP19oK32PWxLFs0Rbq6ZWgHrbCEkmRzfAxXZbQdS6JVNGNsxmxRON";
         const request = {
             url: url,
             headers: headers,
