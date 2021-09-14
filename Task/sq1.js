@@ -36,8 +36,8 @@ async function all() {
     await $.wait(1000);
     //await  jsvedioreward10();
     //await $.wait(1000);
-    //await  jsshucheng();
-    //await $.wait(1000);
+    await  jsshucheng();
+    await $.wait(1000);
     await jsshare();
     await $.wait(1000);
     //await jsread()
@@ -354,17 +354,16 @@ function jsshucheng() {
     return new Promise((resolve, reject) => {
         const url = "https://ocean.shuqireader.com/api/activity/v1/task/reward?sdk=14.6&ustatus=1&umidtoken=CJFLLxhLOp%2Bu3zV7QyKs806Y%2BvW9YrOA&net_env=wifi&placeid=111111&user_id=2916901745&sn=E92DD36C442DA62AA22EF6B3333F044F331EA5AC&msv=10.0.0&brand=Apple&imei=F4272D0D67994A9AD162B30B05698204BD8445A3&appVer=1.0.5.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GNDI3MkQwRDY3OTk0QTlBRDE2MkIzMEIwNTY5ODIwNEJEODQ0NUEzIiwic24iOiJmYXN0X0U5MkREMzZDNDQyREE2MkFBMjJFRjZCMzMzM0YwNDRGMzMxRUE1QUMiLCJleHAiOjE2MjkwMDEzODcsInVzZXJJZCI6IjI5MTY5MDE3NDUiLCJpYXQiOjE2Mjg0ODI5ODcsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.Tm6DmTEVrc_PNRMR-fMouAqqdm9DBIJi_hYurOOaDHZJg2Qxm81N9PxKWggtzrwgkSPgoOJhBxehhLKFFvCMBg&statusBarHeight=44.000000&platform=116&ver=210331&mod=iPhoneXS&wh=1125x2436&utype=vip&utdid=YAzuwNlmZUMDAP8Knq70D7M9&idfa=00000000-0000-0000-0000-000000000000";
         const headers = {
-            "Cookie": "isg=BOHh2SrJJKggsYjKICUFi094-qn7jlWAS31jv0O28ennqgp8i999UQGgCFgsee24; cna=BXqeGVTd73sCAatTLPUxYOJB",
-            "Accept": "*/*",
-            "Connection": "keep-alive",
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Host": "ocean.shuqireader.com",
-            "User-Agent": "shuqifast/1.0.5 (iPhone; iOS 14.6; Scale/3.00)",
-            "Content-Length": "100",
-            "Accept-Language": "zh-Hans-US;q=1, zh-Hant-HK;q=0.9, hi-US;q=0.8, en-US;q=0.7"
+           'Cookie' : `isg=BMbGbiXN25E9PI8LUWzBEpCYHbhIJwrhYpcHF7DvgunbsyvNGLe68FwJj2l_AAL5; cna=Mp/FGZTpP3UCATIHn3xjUi0q`,
+           'Accept' : `*/*`,
+           'Connection' : `keep-alive`,
+           'Content-Type' : `application/x-www-form-urlencoded`,
+           'Accept-Encoding' : `gzip, deflate, br`,
+           'Host' : `ocean.shuqireader.com`,
+           'User-Agent' : `shuqifast/1.0.4 (iPhone; iOS 14.3; Scale/3.00)`,
+           'Accept-Language' : `zh-Hans-CN;q=1`
         };
-        const body = "actTaskId=344&platform=116&reqEncryptParam=%3A&reqEncryptType=-1&resEncryptType=-1&userId=2916901745";
+        const body = "actTaskId=344&platform=116&reqEncryptParam=%3A&reqEncryptType=-1&resEncryptType=-1&userId=2111665808";
         const request = {
             url: url,
             headers: headers,
