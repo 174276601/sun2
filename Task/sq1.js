@@ -48,7 +48,7 @@ async function all() {
         await $.wait(1000);
     }
     await $.wait(1000);
-    await read426();
+    //await read426();
 
 }
 
