@@ -18,12 +18,27 @@ async function all() {
     //nodejs运行
     //await dailysign();
     //await $.wait(1000);
-    await vedioreward();
-    await $.wait(1000);
-    await vediorewarddraw();
-    await $.wait(1000);
-    await drawreward();
-    await $.wait(1000);
+    for(let i=0;i<10;i++)
+    {
+        await vedioreward();
+        await $.wait(1000);
+    }
+    //await vedioreward();
+    //await $.wait(1000);
+    for(let i=0;i<10;i++)
+    {
+        await vediorewarddraw();
+        await $.wait(1000);
+    }
+    //await vediorewarddraw();
+    //await $.wait(1000);
+    for(let i=0;i<10;i++)
+    {
+        await drawreward();
+        await $.wait(1000);
+    }
+    //await drawreward();
+    //await $.wait(1000);
     //await read();
     //await $.wait(1000);
     await share();
