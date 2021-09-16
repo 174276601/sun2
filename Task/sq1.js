@@ -22,8 +22,8 @@ async function all() {
     await $.wait(1000);
     await vediorewarddraw();
     await $.wait(1000);
-    //await drawreward();
-    //await $.wait(1000);
+    await drawreward();
+    await $.wait(1000);
     //await read();
     //await $.wait(1000);
     await share();
