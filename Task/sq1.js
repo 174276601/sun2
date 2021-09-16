@@ -561,16 +561,6 @@ function vedioreward() {
         $.post(request, async (error, response, data) => {
             try {
                 $.log(data);
-                const result = JSON.parse(data)
-                if(result.status==200)
-                {
-
-                    if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt)
-                    {
-                         await vedioreward();
-                         await $.wait(500);
-                    }
-                }
             } catch (e) {
                 $.log(e)
             }
