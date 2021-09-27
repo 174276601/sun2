@@ -57,6 +57,8 @@ async function all() {
     await $.wait(1000);
     await jsread()
     await $.wait(1000);
+    await jsread1()
+    await $.wait(1000);
     for(let i=0;i<10;i++)
     {
         await vedioreward426();
@@ -253,6 +255,43 @@ function jsread() {
     })
 }
   
+
+
+  function jsread1() {
+    return new Promise((resolve, reject) => {
+         const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery?sdk=14.0.1&ustatus=1&umidtoken=SGtL0N9LOlqVsjV8IbYjFbK8hsTV%2FPzX&net_env=wifi&placeid=111111&user_id=2111665808&sn=83319A9114DB9C88B754508D9A51F689639B124B&msv=10.0.0&brand=Apple&imei=98F9E87966D25F87CB378699F83BAA52F8406791&appVer=1.0.5.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMTExNjY1ODA4IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF85OEY5RTg3OTY2RDI1Rjg3Q0IzNzg2OTlGODNCQUE1MkY4NDA2NzkxIiwic24iOiJmYXN0XzgzMzE5QTkxMTREQjlDODhCNzU0NTA4RDlBNTFGNjg5NjM5QjEyNEIiLCJleHAiOjE2MzA5NjkxNDAsInVzZXJJZCI6IjIxMTE2NjU4MDgiLCJpYXQiOjE2MzA0NTA3NDAsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.61M4GnnJPr1CCeJp1BuK2ID7OpNRswKCPANeoXtcxhq1MFKGCsHy5gFeEXCdd9ThubnSwFk5PjE0yUimg3SuEA&statusBarHeight=44.000000&platform=116&ver=210331&mod=iPhoneXMAX&wh=1242x2688&utype=vip&utdid=YFHxHI7aGywDACetI8Soa4Ej&idfa=FA83D0D2-0895-482A-8B1B-48011F454733";
+         const headers = {
+    "Host": "ocean.shuqireader.com",
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Cookie": "isg=BIKCeW16VwwipkoLZ9_3zhsk2YzkU4ZtNfwz6Myb6fWSHyiZtOKSfNhNyZ1jVP4F; cna=hobRGWOMVCcCAbe9r9ebSf7F",
+    "Connection": "keep-alive",
+    "Accept": "*/*",
+    "User-Agent": "shuqifast/1.0.5 (iPhone; iOS 14.0.1; Scale/3.00)",
+    "Accept-Language": "zh-Hans-CN;q=1",
+    "Content-Length": "723",
+    "Accept-Encoding": "gzip, deflate, br"
+};
+         const body = "actId=355&miniWua=HHnB_0tDR6qf6JElzYLvSD37TvGO5gwLtfoczTi8uuChMtBlA7FTs5ZpTyVFZxDm5gr7XZJYersRxSR31hcm62k2yT1o9GpjC%2BqJd1s%2BMc3HVQGTTgiQlYkm457vA8dW5d99Gh5pqr1Nr93PEsudfiz/R9g%3D%3D&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&timestamp=1632717443&userId=2111665808&wua=ktgi_5t8K/uyBWcUFoq7OHBk%2BNUiaKtKZbP2Hi/OefERDd/5kSemsscnkN1JJDoNb53tysSiJLdrl9H3wBtiPQNwzESqucIyIgLO0iQn0moyeGoxP98z2SIJq79gcHbdfsBf7tFx0JDTKNXSP4PLIWE5OmcvkV87kzL5lQRkC0WM9E1MMVIYhMHjWLFwqbbcRLdTjwb7lHHrohX%2B1Or2wt8kKEjeIQT09XKMN4ypap5cFr9kRZHuBaam7sBFtCGfDAX/ZRRpPmDotZ%2BBJaGC8euADjU9BNERRj9OkLeZNu5qaCPFa7kembEoK1bDibostHXA2XLxkJR8HEJXJBSW5ClC0RxahyPGQdMrNsnrsIqshCrnkiSlX/IPguJHgguhqNoqLZpxk4Oh5bDSZ3XtUd8KOgQ%3D%3D";
+        const request = {
+            url: url,
+            headers: headers,
+            body: body
+        };
+
+        $.post(request, async(error, response, data) => {
+            try {
+                $.log(data);
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        })
+    })
+}
+  
+
+
+
 
 function read() {
     return new Promise((resolve, reject) => {
