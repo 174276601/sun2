@@ -635,36 +635,27 @@ function vedioreward() {
 
 function vediorewarddraw() {
     return new Promise((resolve, reject) => {
-        const url = "https://api-access.pangolin-sdk-toutiao.com/api/ad/union/sdk/reward_video/reward/";
-        const headers = {
-           'Accept' : `*/*`,
-           'Accept-Encoding' : `gzip, deflate, br`,
-           'Connection' : `keep-alive`,
-           'Content-Type' : `application/json`,
-           'Host' : `api-access.pangolin-sdk-toutiao.com`,
-           'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148`,
-           'Accept-Language' : `zh-Hans-CN;q=1`
-        };
-        const body = `{"message":"2PL5eBRQhOwbJ7roU1WBJyefvVIwQe74vddbUr5by7wv\/SDH\/f+FHvdBuc6B8NtZQJR7BpkJGGNdSttBjtaB1TcQ3lSuYMT2teFkDX0QVuJPUsGYFRW6gJ1cvs0ZW7fBQgJeywGQEETdNxec7Yy6Seb5lEYk7Z5YM24jv52sygkvQDrdvDnfzbYm0AULqp4nRByU9nuF5mtfJgFVyb5kfZH3IRpZsuryyzcVtop494Dy+1thGJXxKs5Ol8Him8uS0Ny5HU5fCvDxx7AaKD38u9189xDDHs5PzCx0KdplRnbJrrIkf6\/2IdTmmx6rXcMpGPZPnYAcd1u74BItNGf83kYS6WgM2YXoVhUgqSk9oRuJ0VoDmqvJ94Is56pg4VAOcLqqdHhZDQZExrvegI3h4DI8pKKvdHgtr9Mqq+JLJxcqkNR07jje48ldHhhxjUciAOpX966TlGSAYytCOq7XYurDB\/z2i3TV7tBU7zDsJ6k4sFvYpZA2APZoWaHUam\/jecanPn1RLuAvcvxTFBmC\/CoN72gmRJsUu02aLml+OU4uUmxxqKhb61KMo4cypavOOTlquwfO43d6pp5yxrORLR8KdnSHtDeSoEyATU+eYv3UKAAm\/wbfHBv1a8pdi3nIryO\/FT\/aWGlf7Q0hBPpKmUdu+TMY\/Rg5IyV+DUF753epis\/B8Mb3Y3rJ5oUDX2FKC1oW3oGhgGXsoPSGQHFvtadzElrvxZXqYGQjAwPxeuyreOxN742xqyL8yWN2TNXC\/A2BJw7m13Ei84BsQA5uxJOOsTAheXHZYqpsXDrx2+Z2amou1CxqfuYDtmBZUmsF\/V8b1QdktFNV5Kxz6eOdgh1b6OVkAtSDY\/9mBVjUhqY41CB8lN9hiBE6DJZeZbF7YkC5GpIiXNKgrkwHENf+a\/BwUa2jc+0S2e9KGweV65u36yPkQcIEsJ7TftH5Yc2DaP8fuOB+AGWzR1JTF5VVpuSVzrcktIjnlRPuy20cPiMzmKjbuctEt9nfzQckp9G8tjWT9jyqniySs18zDiCCzZmMF\/\/LGgUBazwORhdDVHmdhStIJIwGFUR+IwtAnE+27v6kvMj7mMsr+G76d\/FRAaqzdNgCNNj0DXH2dkP4vAuP1qIEBuSPlgG7fjMXJI0s45ydnwa11Uva7EBxMFlDocCGxv8jh2y+eMIbn5gtucbJKG9SGIyMl8r61Jhi3\/A+Hi0Zy+8Y4WdTUPlRf0iB3fGM+amNxXxdTkWrG1HPD5fU5SoORLYASyiNuFejUXibpcOECavhu5H\/oir6mNg3LiSOxEdGcQGMxXelo1rqGl10k8eEZI7n2blOvbkEQWylxZWvrGCzAldLJQS1EBxPhV4+c91ycnUZL520VhsnZDLGiPVHsNxmKMhYIf4r62m\/g5TMCK10rBZq6EV+lmjnlB4zRvkOc5SCajAP1xCQfdGKjFQz5p682h9OuxrHKTniUDmRd3bg3DdxdLY1pfo0mlkaaHkAeLErNO\/T8vZIX2KRtEUMMvLvWzSGQwOubQY69+btyIDiBN1+lYsEWlyT\/CStdCJ1CsFVXgDi1EAQW6tWooCjUzGYrj26BLtaVgZgWAX7mhypl4Rh52r7tAi7mSf3nXkS0lxcB3B5A1VE7AnrNBL0RJLB0tp5o7PnH5JtvUZ2t\/tadCZ4AbFqeOgWIn9F11akM9ju95fbxqmDzNQxdHY8jP+CGe3f3CEVzie17LXlOHTzNv0lqaFF\/SlxXG5d9M+92aQ65hfl0\/tGVLpwYHVqZv8TG76xECeefbT5LkgFuMJ8VuzBg7c5w4r\/ev7IKnaHOmeVnu+1xzP8wzxLUMoAOiubkCHcEz4W9ty3IwrLRvy\/7tFmzprAfNuipkZfZ4q00T+M20vwtQi6\/MaMwis1gxC6lIKO8GkPDmHJXxNzivGut4SK0MLA5SoqSvg0l5pyjfKLIJmng9P+JbsRhB4MyWKJXQOVSs3ifKBS6\/bd1+mtwsoKRYqRXehgSq3xHgzsZXqNfUJpXK50CKWRKQ\/YykOa7dK\/8Hq6vTc3ZExm8xpdNZLgT+mL3LqfZZwJvInX06SfzfZ8kLNmt3V9AmOYfYNgVm7jdW8O6ODArLIykVYsWviHh\/E\/pX+5+bYqDHRI9nIF+GRhKWOcNmK5j8BRIuPznT7x0C46L2xmvTUbvwApNCuJPrrOChvqUQ10jdLeepUSHvBVrT1yvfW8P9X7MDhJtbhoZzOvMhkqkP4uIYJSc6iRNmPMmwG4pcDOQQYcKjCaPnEaNl0O2pyN6LUURdgEuDLCwZY2SnD3RmhHGEw5z9IKPkGH2wPwUuyvbBi\/MfX8qaSwCiY09QNPiYSngxe+G1yZOv8QZSZQgzQZntfwaD2vROlK59ykptjsA2Pxo2d41eLftsuFRved\/yh0yK0esHIp3SuOK+7ahPHFgTM3Xo5vy8Og1YADr2YeMWYh+h2RKlRaqQCXkXoJxJ7DdDP9DfIksTI7jMsk5vqP3sOXz18QmsN897ale4+ci1nFeclOJGVAu86GBwJ\/h24q3rBfMn0lNdFPO8c8why1dT8ynG1J5ALACYqSxAJBXbcg5Kg3fetuJqE4OX9SAqBUL12v1ft0q08sT3V\/1fxzzeFApT0icTXIz6VmmJj5vHQQsMjPyxquGIdRfw9yoLKEMROsqCb8YS8dR7wxZoOMIxQC7o10DtQZW2JYCpVGtMTKaw+RV3s9EYFs48+nOyS2sUzoonaHy4RYrnOsOEsAl64DrNXaDTYSMkmDX7Z7pacs\/3pDW8vR+tZHtbSZr+AFjourEUjx8M4jWliKtvOsKIjhtQjSB+NxU5c96AFIryBykqVMeU1BPaP\/tUs6mnguXsxKQe6UFsuVWsusrMY79ov1BKVdRE7CLfmVEVCLqF4UENqhF3ZUdq0PpgBTgGri0iVRrP9J\/TSABtYnwi6+JVV9qW5Wj3L2BKsfZFif3l6W6dnwQd5rKDEcFtOZKQ4ne9+8lzaVccOK54vUKy+LUa4M4ZtBYQ3ZzMfGX+UDu5mH+1+EagNAjQ+GMc23bLEE3Fg\/KhlAqv1nWcSHT8MJJ8frVM8O+FTUTSNT07R03G3ng3wfWNjHxaReRWh77HRLZcVyRuge2Ry+Y8+K9lyuOe2+3lWkkoeOLqLMUp+gqB5MBVwE8Yceo8DI3opa0qOvVh41elRAnZ4dC05f\/n6hdYrf7frVpFN1e0UgY4izVwEWPHf3\/benreRSn9VQZowJBjRYyN8u+tRn5uyFA1G3EM\/ebeDPv6KHAKoTZ1J3mFdJA05v\/NCFMh8u7WNab8XOpq1EFpxIytNHU7eAItr5WwYhagJEKfwdsluuZaun6OohQS5dXscCp4+CK5YgZ0JNBLuqFGfMuzq65cQ8ndwth0CcxE2O6N4jI7kGMvaol6rhLkpe7MsKJxGm6Mx3ARpcWDdzyJ7vPDcbup5L5nwZg7UxMqXvD1+A4i15tRQZeXzlu9ktT8xYlThyOuGB9PZO6QfIVo0BUMLdFMuXTtfR5axXY6yyHh32cff6122bmM\/bxUP5uHyS1UBjhrvablSWYEvL3lIwjXmsNymU7SZRkVuoqj11NQfTEVaj0gTtjW\/4Au3BTFrbAhMqaG94AHBrsK3kvmF4l5lCGwNCwjojbXJkNJaLU1O36N81vH3ERyJkPpWZYji+7PHr1+rYtCpgUbcVTPrM7vZaIWCgi2nPcQ11ZBVeqV7wwtEtc1Ve1txtNHCuaip3fpgz8wIGN0FvfLBkwMA8RQ7AZghOxZS9Gd+YPjxrbqmcJRQOdFFTLap90\/Wn3It6dbBDE\/+6j2xadi2e+5w5LnyGrch4ESHyNV2L2mEjLmqy9NKnXz0u9gnTt2vsuOVSTzJMMZQeniNhwoNg6YWCkuPm3BrFM\/tLfE+5mjmP4j\/w4ZcLbZT5kkYLTtIDg8RdIpuDgCvRjfgzA5vJtAKS0L6Z28+ogRR53bRjMzMklqmJz5Nun6R9ilNAJvZrwftNehOtcmZzk+QQyTfomjvEXKxkK8aTsBRCxIEXK7RPXwqY1fb4WBYLlrp3bpV6FO4PxJuq8ZxYf77h0RJg7cYx7wVxfk85yiOtOdOgbaAO+3wnDBMjqNrCDUdhBFZgys5o8jy6btVS4g2a8bXSGmz0Pc66PEFxaM7khuzS+dSsco6rm2pkIyNLuA8CVM2w\/8xdRripXQUOVjNVLsiPgwVU6M5xOSDga9G14PZ1dOcWDRFpzjOmSPu5tw1dJMw3WWm526NWj\/PCo90RRah8jF68x7gcCo58fNdB6WZSsTxahSqNWNqcGZ14v4+OPXX8j1OS9WtlTTCpWxpyA7YlInhy3MB7s6erRazvSGxa8wqDbvFRlrEYHckxSfyadv4\/F+z39f1yJMpaz2MNhUusQB8qKgc+NkkSmWJd0GTihYxhEmkT0ib\/hkxrAOlusHWHexibng2In66fsr5DYnLqfUwI99Prd+kiGQiPpvavILJOBYxdo9ckdMzrAOjpkUZCUGBlmOhkSeW2T7BzHWuqGuz\/NK8c=","cypher":2}`;
+         const url = "https://api-access.pangolin-sdk-toutiao.com/api/ad/union/sdk/reward_video/reward/";
+         const headers = {
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Type": "application/json",
+    "Host": "api-access.pangolin-sdk-toutiao.com",
+    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+    "Content-Length": "4858",
+    "Accept-Language": "zh-Hans-CN;q=1"
+};
+         const body = "{\"message\":\"3Lo3WNy91GaNuy58nWreeqt4ACJbBssKam970WWX0cFcyrBkvYpdq7124xv9xjsTXlUIwLuJHqwmf0vqZnjHAjmobQy+jHfP4oArqzt9FwMYPisHzvKJM8mf1n2m4wezRV5K1bw5FN9aDvzOQJ6Gog7cg3IOQpL3+ojKSeszLxVrClMMsWm2HrlaIiHj2hI2cie4hDcL1ORHj5DDVUL8XM6VD3Ze+hAcDHG40e41Evrfsr+VTPIfYD8IBlwKSuvZmKieYuFw3NM5P5Auw36ksDZKWgeyZiRMjuVPz4Ai0u3W17VHXaL271E+AKFklcQFfb9y0Yp2ACjPgBTYBfF0hjfn6H4BmXjWon8xmmdb7A3XsLC8T7g2ZZLxBqSGXO2nm4iPqYnQRR+xK1dmiOJn5VWmGLhrkOaq9NPP7i9ApCznOODg+y6Wqo7hrNjuQ2x6BB3Tw\\/KKrTC0sZE9Vmo2jxCkjJOlBRpAeimd89HWUjiP\\/KlxrdGRsGo\\/wkcCewp9+jn5P01RqRyQUGO5fAW9JjpgaXJWWJ4aORXqtUnW9\\/xhTrRpiY9OEz57My+5kqth3gZeFrVDU2sRTJTKwie4Hjk0gcsBUFuz6MT+US1NaRgpuh9klGi3YHXGh+T1GeZ9qxSRDqpBS1rEK8rq9fl0stvRnTqthb\\/Gs4c64\\/fBhWGSVBezRF8547N+0jPjpTOP81b6tHfaCFalbatHSAsSyaYra80VIfDKrqg4sA5+X\\/l84+PK+C8TfI5ASAjl9DNtnJrRRBLnmO5Ddhq2Bzk9onHfRyCD8D\\/YdPH0EKnC397nMjzMC+VGN6PYMUfeOKb9CmU\\/c3y+n65mjMd1LfdKQGT8YnXFGMVew80VcGfnA\\/KVSw1Em\\/X3ErnNSC4vTDi8NzQbXkmoGjtSZ1Cnprc1apoY60LhFCtFmkn37n\\/+bDz0U95FlQMmVf6forgR8XJ8iRqvI675h5JAEV2IUYZHKsqSsUtrZ\\/XQ5FEuxcFAO3WRlZZQm0ckUvvBPamGalhJRJuptP4dDusKwQYwZ6NrVz2CMbZWg+suxSzrPrfe4kT0B3oUo82Mf1BPigN\\/b0aabUWiqXNppPLp46\\/7JOsjPkHBKvr14vIBqsgLBqMGTP57bGDOBWh\\/8ZA3wt4uMK82Tm1j4g0RP1wP4bhDYK0eg4GU\\/7KM7VwhzFXTBUJBR4TkZKg7JfW2AeLynLskghJupku0ZdiLu87OcT3kD7UElyEz1Q70eA2gGlVoyW\\/ZdXPrEAh0JHPJYQSafdlIf7lFOlz6mFq1Sz8PZSaOpYzzViT9Y26Y9idRk0pvZmx52l196cktZIT8DAIhBwF9dYCGpeUzFQCbBWs0ph3NcjJfTz+F1FlmlNKloypuGYgKOtY3Hgo2ovvXTMwsV3uvoi2\\/ru9nSgm44gMws+saXXNwMdpK2CdlOUhtEYi3xtwq9ALpHtRIc+hw898LSd8kl5Kk\\/aD4GBXHi8S70q\\/eIXDioaR3G5IGyHL3v8uUlCvOj9gYbbxLj9dFyQauKsFwmVOz6XKyNv3QSxIY7Pfu9wnxQ4fFd+wLTIk3FaKjcJ1uX5\\/A60MGR6kAp4r7IJSZzvgR+1pN7lprGo8X0LEWiMOgUuIiR\\/odBjz2aESL+\\/sgH7LjRj98998wfaIpzVGYKK1WFo4RXHPQOhC+0dMl7IV0p7odbPV9ssv1xtDQMQwfDm+cvWMnkuhD7gWifOnjXBwXz4sGWnv1QeJSqN0JtHUWkTEJu9oqi2hMT3Gf454JQqTQxzmMGGuNGM7bdyB6E1sQhjfVwm80KwKcC3Fmn9lEmygVHgziY5\\/p05GpXHKuPGYYlKoDoJPFnOngI22gu0W+OjSDfMQThFAtvwBFD5\\/AvcNhhh8XvF9DERQu23oBjVAjdJZLcZM31uhVo0hX7bdRmPbhueBKAq8gOunLfJmgPuyKGiQdKbT1hcybsL9y3AO+dsOO1Kk9ExB2yRLYIWRWcEMngAlp+B1cHo7z4Enw32k6Qc76SAAi1c6QVMv9Slma\\/4UWFBSd1FlJLepOdQZgdUEkuMasfnnrjmjlxG+qnfZRCI94sx\\/sa4wcAq6J3IWwn6061yH9WbQ0r0fUNFMsg9OyHE3qKhomdsUj8vudZ0zTD3npVlhHhY3YdVdFGNz+PLkyCNkkSEBFmObjWygS9q821YGiTvltExmZbIGXIDgGMYGSJz041OxRyVlMUBL3T429gsaRN0YlRHLNtOXn9eLnM3Ln+IoyJxDd\\/lcTGqzEU3bAQP+\\/v1dGKQCszL4HL9Es6nUtwg3qKmeYkOTm2VkzE3AjXVWvB7+xdmt1cmdikGmPxdv+nBepqxddHZJyoGUI4tS4KhIZ\\/pTKxFoyx\\/QXsk0H0EZ6Zaj3FDz6Yo\\/Ny9u++\\/6BCD6hy1Q1djH+fyHUTP3z6fNUD7prE6WoO5LPA4c\\/KfJWNHhBkGDav1GPlHxilzhMMsNGvdqt6z\\/IlRoiHy0g89aJAzvHlVjIxQTY8BvUHGSTXGWeCOkdcDzk4yaCllxfnaLDu\\/XcUzA+UPj6DCPTr\\/bnHChc\\/B98flr8Nfme6BjcsQR\\/28c1yVP6YnKqxKnS2QE48xom+ClfdSZRfG+TZ7X7gpHMeWAJPhZQo6BR6OS4eWuSgN3w+0sEP67ZftGzXajGxinD4dQUsaAH7auHRpCTqQN0EHwh3R7yUg5CeXX8938owA43Y6ora4aczCeb1iD\\/lMmO0J6c69twxJlh690NQ40IpN1uhUrkJK9owWTJPdDDZsVz3aXQnMv9Z1GB5HD4WIpwFrZPLo4FUCckr8rhHx\\/HoyLwhzf1+usR+8EwuR8CPQDgoLMbgwNCAuypKBmYnQypSzehjW7LHzVtD8W7O3khtWiM314pJ60YaKGbEGm+nreQ7EYAD9Rcjwi9pPLKK5nmJVp76K2INm2YvYDbmYIk16D3riZIfs9q+l561Cjh2T\\/5T+fgymIjNMGdSKLZ5BtnuB2M0IFVH6q9GdzrWgwaRqsdLYnUmLwfcfnBjM3RRXGoH2\\/TFjg1a7sWO9Ig0tqi2PfsZle4lhoU3omP5S3qLRFQGM5IGAJVKEuUONdoHaIFwgUJufchRsd0HwNjOwphZeIqi55glZjwaJIj8rl3lFfsLqf+OPk3l260i0EMgPhceB8hzOpDb72feaZBDKRn8Rby9lEqolcln6C80fuYpuTRNUWheDftotJKgCSNt93sWNwvsB7jdVa+LfNCgMP04xEs38AOGnWg9UaT2fZ5W3ndRIMhKU\\/cxxCt2BA7gfhl38wTTLXE1d8S0svwlns75tWE+WeZkvAIQisvLyyaDHRZNcJAJUYIbnQPmneqwLmc65jVBfILBQh9Ah8qOgg31f6bYsiBCbrQhNR45gB\\/FQ098h+n3brG+8olW7fl2urSNAEyumhKJcEbBfSKC67cnibOgWHiVE2wjNJU1xTN6CYCiBSCm1tO1rlhZxWjqQ8jR9KjYyijhp3K+rRkkrPdNFXvYUJaLCJfYDmHQ6gG0gx3tjAKMR4W6Ao\\/oZ9ewTp3m+nAv1ZLao8+OwDaaNuI3W7Z+YojMeHVvqzBcUs\\/Ai44ugA2DO+vXw5cE9kusdVwhd5J4EG1la5pzC4QEE97Sl\\/Xnb7fDtM\\/9Dr9V2SyT3pyyF46AmVTdyEqAiQXloi0X0Q\\/bj5d1LYBuYbpyvzx5opwY+GZfTo\\/QTqTdHCQDJcuVAcEwxGoWx2el3CWpWJhhyHhaQ3vb2rB\\/w5hZHOwSr76oRjioGYBE7t6qjbRp0DLtL0ysaCjBzPVWgct5JUYoWzfRaWPk4MaIHb6oD2JSwLu6mW8TyozW76o2QKDezxpk5khghslq\\/7OWmQBj1PFfmkGCfAEAbgNtCc5KMKf8OgRz3mxFCjLgUfKvA673kk3itGPlfxDWlHttxUpsLcilk0gB+3SCs2YNTRMPJXDIbSWYkLddCii\\/9yhozvZ+4bhpVaD39aVHAlqeXhebrJLpbM53Oh+BAYKMgtXBgHo1g7vZnqenXhIz8PbOhgLMo9ti5IR3tM37f54PaMbhlaFGPFdr2JWk22jnSr2jyRWzG9\\/uV2uZBpoy43FTflgkphPDHb12\\/XOERRKJgqS3O2PTy1bYSptixLEqga479LntsNTPFwIp8EYc669aCRW\\/iyfZqddaYAsP03IFhzBKSvTJ3gUdEpN65IQ4ffHnRgot1f5ZzKZStnecg39cc5DZAJ9Pb4yRC0+l0WA5TMktqdWEcarWhQJdkK8riYMUoLSA0zoxTCqn9+1R3ZW7EzzDcEzMJKW4LK9D5yIM6vJlvwQnA4gyuy2ZduIY8MgRjcDKKVBBjoKavmOHav27\\/jrO2OKD0HkyVQtE3nhJT917pzruAJG7Tb1vCUjgfSBz2gxtGqnKhP1PqEdepNe\\/o3jtf9eMZezR9+I67Jd8\\/T35FbDwIqem0Yej26ZA+0zGW26eqadIkR6P\\/d8uDbjbSY9WD\\/\\/ryglsUxNo385gT8rdqrE5vePVyf7Cpj0l21Kfq\\/jpc7QwjQnzcUDo2iae3XL805jjMFfrshaF22EufxRbEpND9AObrJGjtcWagkdZncXv5agtxUChPpmYmn66r1\\/iL4VdF2o\\/C+y5F5jH4qm4TdHYsGIEHWfieuzFFfT0d6TjxuxN+mOdeUchpAUCbAUFLtjEbUVubznvke6FpJP4zHPGOHwtmKs3ocHeHRtPK9s5762XnTUHbtUpXTCUTHoKZg\\/ettiyjqAA5+zjIiDWiE09wDyJ6Ow=\",\"cypher\":3}";
         const request = {
             url: url,
             headers: headers,
             body: body
         };
 
-        $.post(request, async (error, response, data) => {
+        $.post(request, async(error, response, data) => {
             try {
                 $.log(data);
-                const result = JSON.parse(data)
-                if(result.status==200)
-                {
-
-                    if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt)
-                    {
-                         await vediorewarddraw();
-                         await $.wait(500);
-                    }
-                }
             } catch (e) {
                 $.log(e)
             }
@@ -672,43 +663,35 @@ function vediorewarddraw() {
         })
     })
 }
+  
 
 
 
 function drawreward() {
     return new Promise((resolve, reject) => {
-        const url = "https://ocean.shuqireader.com/api/activity/activity/v1/lottery/draw?asac=2A20C07RJ9F51AOEFSNHDR";
-        const headers = {
-           'Origin' : `https://render-web.shuqireader.com`,
-           'Accept-Encoding' : `gzip, deflate, br`,
-           'Connection' : `keep-alive`,
-           'Content-Type' : `application/x-www-form-urlencoded`,
-           'Accept' : `application/json, text/plain, */*`,
-           'Host' : `ocean.shuqireader.com`,
-           'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/18C66 AliApp(shuqi/4.2.10.0) WindVane/8.6.1 Shuqi (iPhone8,2__shuqi__v4.2.10.0) 1242x2208 Winding(WV_7) WK`,
-           'Referer' : `https://render-web.shuqireader.com/render/wx-activity/page/lottery_page_red_package_rain/?serviceWorkerOn=1&asac=2A20C07RJ9F51AOEFSNHDR&spm=a2oun.page_render_sq_welfare_welfare_page_v2.%E6%8B%9B%E8%B4%A2%E7%8C%AB.turntable_in_0&sdk=14.3&utdid=YRPHOvDewScDALPRGBH3kbX0&ustatus=1&first_placeid=111111&net_env=wifi&placeid=111111&user_id=2111665808&sn=08F7FE3B83E32D8F65DCECCBE4629C63178A61CF&umidtoken=YRPHOvDewScDALPRGBH3kbX0&msv=8.0.0&brand=Apple&imei=59AF196F729EC9BBEE11F988A182A7CE8CB76B9E&skinVersionPrefix=1&appVer=4.2.10.0&skinActiveColor=0F9970&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMTExNjY1ODA4IiwidXRkaWQiOiIiLCJpbWVpIjoiNTlBRjE5NkY3MjlFQzlCQkVFMTFGOTg4QTE4MkE3Q0U4Q0I3NkI5RSIsInNuIjoiMDhGN0ZFM0I4M0UzMkQ4RjY1RENFQ0NCRTQ2MjlDNjMxNzhBNjFDRiIsImV4cCI6MTYzMjI4Nzg3NCwidXNlcklkIjoiMjExMTY2NTgwOCIsImlhdCI6MTYzMTc2OTQ3NCwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.XaUCyg0gBK3OB40RftA9Jp9EILHaQ9rcuRJrmBQzaREuMKOoYvQ6SM5Ds2JZxDdGNlQwMSa48K8-6MpLq3dQ5Q&skinColor=23B383&platform=iOS&ver=201218&mod=iPhone6splus&statusBarHeight=20.000000&skinVersion=1&wh=1242x2208&soft_id=21&utype=vip&skinId=999&idfa=11A1346C-AA3A-456B-B89B-ED8E1A043AE1`,
-           'Accept-Language' : `zh-cn`
-        };
-        const body = "activityId=311&lotteryNum=1&sessionId=1&useGoldcoinType=0&wua=HIVW_B%2FCJjV0UQUyv13Bb4V9YwFAiFVd8xtgkmCfr0Zqlt9Oxr44c5bR5zlb8OMFQoiKz8DVt6SSCTLxDZ3xNAh6003L2dAHDix%2Fd5hiAP8ALJ5y39x1%2BGOAB%2FFjei2Ojivz7khAeHNoF6mgpFkDw7sjgGP0%2BR6mt1kUTt%2F6%2FvLc97DyyoqbMzV0p%2FFkAIAIYWNK2WgUm7s3hIazOGLodm%2BOf9ioyKURk4P38JMSWYnMRcTBTqUIr1rVz2H%2FkgEr7HLWyMomkDNO%2BW1v1L6V7qsi2R4Lujwl7l%2FRoZrE%2FjnQkt2qDioAzzZkaJzlM74Qt5GoL2ds0xRi6eU%2FwALVVrlA6%2BFEMeS1HX9p6DcmoH8rM3mK1aWfp57Ut%2Fl1pSQdt2dws&ua=&miniWua=HHnB_4aXEXdHUdsAsMbcZPdyLZQazKNriPxfq%2Fh9j9RRblPo5%2FS1tibbAxHbnc4mTJ4GkmM%2Ff1UIh0ZHvbmf6QTqLNHnLJVe4YYGQN%2BBxKmQbr8RkPpUvYRfZOZ432%2F1SH1%2FY&userId=2111665808&umidtoken=YRPHOvDewScDALPRGBH3kbX0&secureDeviceType=ios&secureAppName=wenxue-activity-proxy&platform=1&appVer=4.2.10.0&placeId=111111&timestamp=1631769595&sqSv=1.0&sign=ce4a6432391db484ffd294c05d5ca556&key=sq_h5_gateway&_public=serviceWorkerOn%3D1%26asac%3D2A20C07RJ9F51AOEFSNHDR%26spm%3Da2oun.page_render_sq_welfare_welfare_page_v2.%25E6%258B%259B%25E8%25B4%25A2%25E7%258C%25AB.turntable_in_0%26sdk%3D14.3%26utdid%3DYRPHOvDewScDALPRGBH3kbX0%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2111665808%26sn%3D08F7FE3B83E32D8F65DCECCBE4629C63178A61CF%26umidtoken%3DYRPHOvDewScDALPRGBH3kbX0%26msv%3D8.0.0%26brand%3DApple%26imei%3D59AF196F729EC9BBEE11F988A182A7CE8CB76B9E%26skinVersionPrefix%3D1%26appVer%3D4.2.10.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMTExNjY1ODA4IiwidXRkaWQiOiIiLCJpbWVpIjoiNTlBRjE5NkY3MjlFQzlCQkVFMTFGOTg4QTE4MkE3Q0U4Q0I3NkI5RSIsInNuIjoiMDhGN0ZFM0I4M0UzMkQ4RjY1RENFQ0NCRTQ2MjlDNjMxNzhBNjFDRiIsImV4cCI6MTYzMjI4Nzg3NCwidXNlcklkIjoiMjExMTY2NTgwOCIsImlhdCI6MTYzMTc2OTQ3NCwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.XaUCyg0gBK3OB40RftA9Jp9EILHaQ9rcuRJrmBQzaREuMKOoYvQ6SM5Ds2JZxDdGNlQwMSa48K8-6MpLq3dQ5Q%26skinColor%3D23B383%26platform%3D1%26ver%3D201218%26mod%3DiPhone6splus%26statusBarHeight%3D20.000000%26skinVersion%3D1%26wh%3D1242x2208%26soft_id%3D21%26utype%3Dvip%26skinId%3D999%26idfa%3D11A1346C-AA3A-456B-B89B-ED8E1A043AE1";
+         const url = "https://ocean.shuqireader.com/api/activity/activity/v1/lottery/draw?asac=2A20C07RJ9F51AOEFSNHDR";
+         const headers = {
+    "Origin": "https://render-web.shuqireader.com",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Accept": "application/json, text/plain, */*",
+    "Host": "ocean.shuqireader.com",
+    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 AliApp(shuqi/4.5.0.0) WindVane/8.6.1 Shuqi (iPhone8,2__shuqi__v4.5.0.0) 1242x2208 Winding(WV_3) WK",
+    "Referer": "https://render-web.shuqireader.com/render/wx-activity/page/lottery_page_red_package_rain/?serviceWorkerOn=1&asac=2A20C07RJ9F51AOEFSNHDR&spm=a2oun.page_render_sq_welfare_welfare_page_v2.%E6%8B%9B%E8%B4%A2%E7%8C%AB.turntable_in_0&sdk=14.3&utdid=YRPHOvDewScDALPRGBH3kbX0&ustatus=1&contentRecom=1&first_placeid=111111&net_env=wifi&placeid=111111&user_id=2111665808&sn=08F7FE3B83E32D8F65DCECCBE4629C63178A61CF&umidtoken=ZuBLgUJLOsci%2FTV8b5vtx%2FIJlCBvFZjh&msv=8.0.0&brand=Apple&skinVersionPrefix=1&isTeenMode=0&appVer=4.5.0.0&personalized=1&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMTExNjY1ODA4IiwidXRkaWQiOiIiLCJpbWVpIjoiNTlBRjE5NkY3MjlFQzlCQkVFMTFGOTg4QTE4MkE3Q0U4Q0I3NkI5RSIsInNuIjoiMDhGN0ZFM0I4M0UzMkQ4RjY1RENFQ0NCRTQ2MjlDNjMxNzhBNjFDRiIsImV4cCI6MTYzNDUxNzY4NCwidXNlcklkIjoiMjExMTY2NTgwOCIsImlhdCI6MTYzMzk5OTI4NCwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.3BrQZyjDZKPhqSTcJ7PC_A-hs2gzUVlziw5NxLskyI7TxCTAVHm6nHUglrJvv4LluV3Dp4c5s3WN100bCJeaow&skinColor=23B383&platform=iOS&sqiOSUniqDeviceId=59AF196F729EC9BBEE11F988A182A7CE8CB76B9E&mod=iPhone6splus&ver=210827&skinVersion=1&skinActiveColor=0F9970&statusBarHeight=20.000000&wh=1242x2208&soft_id=21&utype=vip&skinId=999&idfa=11A1346C-AA3A-456B-B89B-ED8E1A043AE1",
+    "Content-Length": "2205",
+    "Accept-Language": "zh-cn"
+};
+         const body = "activityId=311&lotteryNum=1&sessionId=1&useGoldcoinType=0&wua=HIVW_tKQWhg%2BUv4q7QsmuGVw8A18kY8%2B04fLt1%2BhT%2BjznGbbQtT74Dbsulzb9aWBg9I5SEQNuQPrxRymC4Fwt%2Bz6GCQ%2BG%2BW2dfkhgKIVnFXz0cm06p8c5raiTD0h9eR3HdGJeNSPK9vDkYrTeifCNG6JJD%2BxFLWhfZF%2FV8FvuwGWZWCD2yzwXtzyD7U%2FoZe0AtiOOwrYrb9qe6X%2FUKLxQHdjDEICLbw56neovDbads7%2BhbMrq9V02Bos4PNfEvnTAo8%2FboQx8fqcItF9hVISSHM6OewFEzfP4RlStVGVnAY4KSNUCdtm7dPnw8m5h13mFPtXE3eeCTLJWglZ56lj9Yyy7RB2PiLjKor%2FM1k9pfLPRLVI%3D&miniWua=HHnB_CVJkcezqinbNAkm5KfMagNts1V5L1x8bd1dr2KW7Zo1huBpAJEhjtP5Yy5sDvUi02D9sonlWe4z%2F2r1gAN8P1%2BQviAfAWFb%2BvyqFGucT%2FI87vwazBeca%2BCddZkoWF1r42ebAijjaGz6P2vIeJI1PhlAhglQe5tDry%2FAPTHR12yM%3D&userId=2111665808&umidtoken=ZuBLgUJLOsci%2FTV8b5vtx%2FIJlCBvFZjh&secureDeviceType=ios&secureAppName=wenxue-activity-proxy&platform=1&appVer=4.5.0.0&placeId=111111&timestamp=1633999375&sqSv=1.0&sign=418220299b07025fb2c7fd07b80d2579&key=sq_h5_gateway&_public=serviceWorkerOn%3D1%26asac%3D2A20C07RJ9F51AOEFSNHDR%26spm%3Da2oun.page_render_sq_welfare_welfare_page_v2.%25E6%258B%259B%25E8%25B4%25A2%25E7%258C%25AB.turntable_in_0%26sdk%3D14.3%26utdid%3DYRPHOvDewScDALPRGBH3kbX0%26ustatus%3D1%26contentRecom%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2111665808%26sn%3D08F7FE3B83E32D8F65DCECCBE4629C63178A61CF%26umidtoken%3DZuBLgUJLOsci%252FTV8b5vtx%252FIJlCBvFZjh%26msv%3D8.0.0%26brand%3DApple%26skinVersionPrefix%3D1%26isTeenMode%3D0%26appVer%3D4.5.0.0%26personalized%3D1%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMTExNjY1ODA4IiwidXRkaWQiOiIiLCJpbWVpIjoiNTlBRjE5NkY3MjlFQzlCQkVFMTFGOTg4QTE4MkE3Q0U4Q0I3NkI5RSIsInNuIjoiMDhGN0ZFM0I4M0UzMkQ4RjY1RENFQ0NCRTQ2MjlDNjMxNzhBNjFDRiIsImV4cCI6MTYzNDUxNzY4NCwidXNlcklkIjoiMjExMTY2NTgwOCIsImlhdCI6MTYzMzk5OTI4NCwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.3BrQZyjDZKPhqSTcJ7PC_A-hs2gzUVlziw5NxLskyI7TxCTAVHm6nHUglrJvv4LluV3Dp4c5s3WN100bCJeaow%26skinColor%3D23B383%26platform%3D1%26sqiOSUniqDeviceId%3D59AF196F729EC9BBEE11F988A182A7CE8CB76B9E%26mod%3DiPhone6splus%26ver%3D210827%26skinVersion%3D1%26skinActiveColor%3D0F9970%26statusBarHeight%3D20.000000%26wh%3D1242x2208%26soft_id%3D21%26utype%3Dvip%26skinId%3D999%26idfa%3D11A1346C-AA3A-456B-B89B-ED8E1A043AE1";
         const request = {
             url: url,
             headers: headers,
             body: body
         };
 
-        $.post(request, async (error, response, data) => {
+        $.post(request, async(error, response, data) => {
             try {
                 $.log(data);
-                const result = JSON.parse(data)
-                if(result.status==200)
-                {
-
-                    if (result.data.availableNum > 0)
-                    {
-                         await drawreward();
-                         await $.wait(500);
-                    }
-                }
             } catch (e) {
                 $.log(e)
             }
@@ -716,8 +699,9 @@ function drawreward() {
         })
     })
 }
-
-
+  
+      
+  
 
 
 
